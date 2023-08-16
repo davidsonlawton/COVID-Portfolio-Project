@@ -1,7 +1,7 @@
-Select *
-From [Portfolio Project]..CovidDeaths$
-Where continent is not null
-order by 3, 4
+SELECT *
+FROM [Portfolio Project]..CovidDeaths$
+WHERE continent is not null
+ORDER BY 3, 4
 
 
 --Select *
@@ -10,23 +10,23 @@ order by 3, 4
 
 -- select data that will be used
 
-Select Location, date, total_cases, new_cases, total_deaths, population
-From [Portfolio Project]..CovidDeaths$
-order by 1, 2
+SELECT Location, date, total_cases, new_cases, total_deaths, population
+FROM [Portfolio Project]..CovidDeaths$
+ORDER BY 1, 2
 
 --Look at total cases vs total deaths (shows liklihood of dying if you contract COVID in your country)
 
-Select Location, date, total_cases, total_deaths, (CAST(total_deaths AS FLOAT) / CAST(total_cases AS FLOAT))*100 AS DeathPercentage
-From [Portfolio Project]..CovidDeaths$
-where location like '%states%'
-order by 1, 2
+SELECT Location, date, total_cases, total_deaths, (CAST(total_deaths AS FLOAT) / CAST(total_cases AS FLOAT))*100 AS DeathPercentage
+FROM [Portfolio Project]..CovidDeaths$
+WHERE location like '%states%'
+ORDER BY 1, 2
 
 -- look at total cases vs population (shows what percent of population got covid)
 
-Select Location, date, total_cases, population, (CAST(total_cases AS FLOAT) / CAST(population AS FLOAT))*100 AS PercentagePopulationInfected
-From [Portfolio Project]..CovidDeaths$
-where location like '%states%'
-order by 1, 2
+SELECT Location, date, total_cases, population, (CAST(total_cases AS FLOAT) / CAST(population AS FLOAT))*100 AS PercentagePopulationInfected
+FROM [Portfolio Project]..CovidDeaths$
+WHERE location like '%states%'
+ORDER BY 1, 2
 
  --look at countries with highest infection rate compared to population
 
